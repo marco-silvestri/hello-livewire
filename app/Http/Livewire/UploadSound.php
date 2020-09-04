@@ -20,8 +20,14 @@ class UploadSound extends Component
 
         $filename = $this->sound->store('uploads');
 
+        $getID3 = new \getID3;
+
+        $fileInfo = $getID3->analyze('storage/' . $filename);
+        $playtime_seconds = $fileInfo['playtime_seconds'];
+
         Upload::create([
             'filename' => $filename,
+            'playtime' => round($playtime_seconds),
         ]);
     }
 }

@@ -17,6 +17,7 @@ class CreateUploadsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('filename');
+            $table->string('playtime');
         });
     }
 

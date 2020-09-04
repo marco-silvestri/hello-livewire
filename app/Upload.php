@@ -8,6 +8,7 @@ class Upload extends Model
 {
     protected $fillable = [
         'filename',
+        'playtime',
     ];
 
     protected $table = 'uploads';
